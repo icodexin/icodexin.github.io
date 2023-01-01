@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>《数字逻辑》课程设计 - 小芯的博客</title>
+
+  
+    <meta name="description" content="题目一：数字电子钟设计设计任务及要求 任务用计数器设计一个电子钟，显示时、分、秒。 要求（1） 小时为 00-23 二十四进制计数器，分、秒为 00-59 六十进制计数器；（2） 用八段数码管进行显示时、分、秒。（3） 用 Logisim 画图，并进行仿真。要求能看到正确的时、分、秒信息。（4） 先用 Logisim 软件仿真测试是否正确，再提交网站（EduCoder）测评。  实验条件 Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《数字逻辑》课程设计">
+<meta property="og:url" content="https://codexin.cn/post/course-design-of-digital-logic/">
+<meta property="og:site_name" content="小芯的博客">
+<meta property="og:description" content="题目一：数字电子钟设计设计任务及要求 任务用计数器设计一个电子钟，显示时、分、秒。 要求（1） 小时为 00-23 二十四进制计数器，分、秒为 00-59 六十进制计数器；（2） 用八段数码管进行显示时、分、秒。（3） 用 Logisim 画图，并进行仿真。要求能看到正确的时、分、秒信息。（4） 先用 Logisim 软件仿真测试是否正确，再提交网站（EduCoder）测评。  实验条件 Java">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201229214732581.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201229214751492.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201229215136658.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201229215215307.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201229215237491.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201229215302132.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201229215320745.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201229215414757.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020122921545320.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201229220253874.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hzaW5nWWFuZw==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201229220425113.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201229220546662.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201229220602917.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hzaW5nWWFuZw==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-12-02T14:11:11.000Z">
+<meta property="article:modified_time" content="2022-01-24T08:19:22.170Z">
+<meta property="article:author" content="爱编程的小芯">
+<meta property="article:tag" content="数字电路">
+<meta property="article:tag" content="FPGA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20201229214732581.png">
+  
+  
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/images/favicon-48x48.ico">
+  
+
+  
+
+  
+
+
+  
+    
+      <link rel="icon" type="image/x-png" href="/images/favicon-128x128.png" sizes="128x128">
+    
+      <link rel="apple-touch-icon" type="image/x-png" href="/images/favicon-180x180.png">
+    
+      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">小芯的博客</div><div class="sub normal cap">一个热爱编码的计算机大学生</div><div class="sub hover cap" style="opacity:0"> codexin.cn</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">文章</a><a class="nav-item" href="/wiki/">项目</a><a class="nav-item" href="/about/">关于</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">《数字逻辑》课程设计</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%80%EF%BC%9A%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E9%92%9F%E8%AE%BE%E8%AE%A1"><span class="toc-text">题目一：数字电子钟设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E4%BB%BB%E5%8A%A1%E5%8F%8A%E8%A6%81%E6%B1%82"><span class="toc-text">设计任务及要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%9D%A1%E4%BB%B6"><span class="toc-text">实验条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E8%BF%87%E7%A8%8B"><span class="toc-text">设计过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E7%90%86%E4%B8%8E%E6%80%9D%E8%B7%AF"><span class="toc-text">设计原理与思路</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4%E4%BD%8D%E9%80%92%E5%A2%9E%E8%AE%A1%E6%95%B0%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-text">4位递增计数器的设计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%AD%E8%BF%9B%E5%88%B6%E8%AE%A1%E6%95%B0%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-text">六进制计数器的设计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E8%AE%A1%E6%95%B0%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-text">十进制计数器的设计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%AD%E5%8D%81%E8%BF%9B%E5%88%B6%E8%AE%A1%E6%95%B0%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-text">六十进制计数器的设计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#24%E8%BF%9B%E5%88%B6%E8%AE%A1%E6%95%B0%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-text">24进制计数器的设计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E9%92%9F%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-text">数字电子钟的设计</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E5%9B%BE"><span class="toc-text">逻辑电路图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%B5%8B%E8%AF%95"><span class="toc-text">实验测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BA%8C%EF%BC%9A%E8%B7%AF%E7%81%AF%E5%B7%A1%E5%9B%9E%E6%A3%80%E6%B5%8B%E5%99%A8"><span class="toc-text">题目二：路灯巡回检测器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E4%BB%BB%E5%8A%A1%E5%8F%8A%E8%A6%81%E6%B1%82-1"><span class="toc-text">设计任务及要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%9D%A1%E4%BB%B6-1"><span class="toc-text">实验条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E8%BF%87%E7%A8%8B-1"><span class="toc-text">设计过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E7%90%86%E5%92%8C%E6%80%9D%E8%B7%AF"><span class="toc-text">设计原理和思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Verilog%E4%BB%A3%E7%A0%81"><span class="toc-text">Verilog代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%B5%8B%E8%AF%95-1"><span class="toc-text">实验测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E6%9D%BF%E5%BC%95%E8%84%9A%E5%88%86%E9%85%8D"><span class="toc-text">开发板引脚分配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%81%94%E6%9C%BA%E8%B0%83%E8%AF%95"><span class="toc-text">联机调试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></div></div></widget>
+
+
+</div>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/icodexin" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/08a41b181ce68.svg"/></a><a class="social" href="https://music.163.com/#/user/home?id=315096386" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/3845874.svg"/></a><a class="social" href="/about/#comments" rel="noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/942ebbf1a4b91.svg"/></a></div></footer>
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/">课程设计</a></div><div id="post-meta">发布于&nbsp;<time datetime="2020-12-02T14:11:11.000Z">2020-12-02</time></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>《数字逻辑》课程设计</span></h1>
+<h2 id="题目一：数字电子钟设计"><a href="#题目一：数字电子钟设计" class="headerlink" title="题目一：数字电子钟设计"></a>题目一：数字电子钟设计</h2><h3 id="设计任务及要求"><a href="#设计任务及要求" class="headerlink" title="设计任务及要求"></a>设计任务及要求</h3><ol>
+<li>任务<br>用计数器设计一个电子钟，显示时、分、秒。</li>
+<li>要求<br>（1） 小时为 00-23 二十四进制计数器，分、秒为 00-59 六十进制计数器；<br>（2） 用八段数码管进行显示时、分、秒。<br>（3） 用 Logisim 画图，并进行仿真。要求能看到正确的时、分、秒信息。<br>（4） 先用 Logisim 软件仿真测试是否正确，再提交网站（EduCoder）测评。</li>
+</ol>
+<h3 id="实验条件"><a href="#实验条件" class="headerlink" title="实验条件"></a>实验条件</h3><ol>
+<li>Java Runtime Environment 环境</li>
+<li>Logisim虚拟数字电路仿真平台</li>
+</ol>
+<h3 id="设计过程"><a href="#设计过程" class="headerlink" title="设计过程"></a>设计过程</h3><h4 id="设计原理与思路"><a href="#设计原理与思路" class="headerlink" title="设计原理与思路"></a>设计原理与思路</h4><h5 id="4位递增计数器的设计"><a href="#4位递增计数器的设计" class="headerlink" title="4位递增计数器的设计"></a>4位递增计数器的设计</h5><p>数字电子钟的基本组成单元由4位递增计数器构成，在进行其他器件设计前，先要完成4位递增计数器的设计。<br>计数是一种最简单的基本运算。计数器就是实现这种运算的逻辑电路，计数器在数字系统中主要是对脉冲的个数进行计数，以实现测量、计数和控制的功能，同时兼有分频功能。计数器在数字系统中应用广泛，如在电子计算机的控制器中对指令地址进行计数，以便顺序取出下一条指令，等等。<br>这里设计了一个带有同步置数、异步清零功能的4位同步递增计数器。<br>引脚说明：</p>
+<table>
+<thead>
+<tr>
+<th>信号</th>
+<th>输入输出</th>
+<th>位宽</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Clock</td>
+<td>输入</td>
+<td>1位</td>
+<td>时钟脉冲，上升沿有效</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>输入</td>
+<td>1位</td>
+<td>异步清零端：Reset&#x3D;1时，Q&#x3D;0</td>
+</tr>
+<tr>
+<td>Enable</td>
+<td>输入</td>
+<td>1位</td>
+<td>使能端：Reset&#x3D;0时，Enable&#x3D;1递增计数、0保持</td>
+</tr>
+<tr>
+<td>Load</td>
+<td>输入</td>
+<td>1位</td>
+<td>同步置数端：Reset&#x3D;0、Load&#x3D;1、Clock上升沿时，Q&#x3D;D</td>
+</tr>
+<tr>
+<td>D</td>
+<td>输入</td>
+<td>4位</td>
+<td>并行数据加载端</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>输出</td>
+<td>4位</td>
+<td>状态输出端</td>
+</tr>
+</tbody></table>
+<p>具有并行加载功能的计数器原理如下图所示：<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/20201229214732581.png"><br>将4位递增计数器封装后的外观：<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/20201229214751492.png"></p>
+<h5 id="六进制计数器的设计"><a href="#六进制计数器的设计" class="headerlink" title="六进制计数器的设计"></a>六进制计数器的设计</h5><p>六进制计数器可由4位递增计数器构成，当4位递增计数器计数到6时，异步清零使Q&#x3D;0，这样就完成了六进制计数器的功能。<br>六进制计数器是构成六十进制计数器的基础。</p>
+<h5 id="十进制计数器的设计"><a href="#十进制计数器的设计" class="headerlink" title="十进制计数器的设计"></a>十进制计数器的设计</h5><p>十进制计数器可由4位递增计数器构成，当4位递增计数器计数到10时，异步清零使Q&#x3D;0，这样就完成了十进制计数器的功能。<br>十进制计数器是构成六十进制计数器的基础。</p>
+<h5 id="六十进制计数器的设计"><a href="#六十进制计数器的设计" class="headerlink" title="六十进制计数器的设计"></a>六十进制计数器的设计</h5><p>六十进制计数器可由六进制计数器和十进制计数器构成，10进制计数器的进位输出端是六进制计数器的使能端（Enable）触发条件，每十次触发一次6进制计数器，而6进制计数器本身最大计数为6，这样就完成了六十进制计数器的功能。<br>六十进制计数器是构成数字电子钟的基础。</p>
+<h5 id="24进制计数器的设计"><a href="#24进制计数器的设计" class="headerlink" title="24进制计数器的设计"></a>24进制计数器的设计</h5><p>24进制计数器可由两个十进制计数器构成。<br>可用第一个十进制表示个位，记为计数器A。第二个十进制计数器表示十位，记为计数器B。<br>计数器A的进位输出端是计数器B的使能端（Enable）触发条件，每十次触发一次计数器B，同时，检测计数器A和B的状态输出端，当状态值为23时，使整个电路的进位输出端为1，当状态值为24时，异步清零，使计数器A和B的Q均为0。这样就完成了24进制计数器的功能。<br>24进制计数器是构成数字电子钟的基础。</p>
+<h5 id="数字电子钟的设计"><a href="#数字电子钟的设计" class="headerlink" title="数字电子钟的设计"></a>数字电子钟的设计</h5><p>数字电子钟由小时（0-23）、分钟（0-59）、秒（0-60）构成。<br>秒由六十进制计数器构成，计数的条件是时钟的滴答。所以，在实际仿真的时候，可以调整时钟频率为1Hz，使其符合1秒1次的计数规则。<br>分钟由六十进制计数器构成，计数的条件是当秒钟产生进位。<br>小时由24进制计数器构成，计数的条件是当分钟和秒钟同时产生进位。<br>在实际仿真中，用16进制数字显示器件（Hex Digit Display）显示上述器件产生的状态，这样就完成了数字电子钟的功能和设计。</p>
+<h4 id="逻辑电路图"><a href="#逻辑电路图" class="headerlink" title="逻辑电路图"></a>逻辑电路图</h4><p>4位递增计数器：<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/20201229215136658.png"><br>六进制计数器：<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/20201229215215307.png"><br>十进制计数器：<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/20201229215237491.png"><br>六十进制计数器：<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/20201229215302132.png"><br>24进制计数器：<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/20201229215320745.png"><br>数字电子钟：<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/20201229215414757.png"></p>
+<h3 id="实验测试"><a href="#实验测试" class="headerlink" title="实验测试"></a>实验测试</h3><p>将Clock信号，由手动点击改为时钟连续，将使能端Enable启动，然后进行测试：<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/2020122921545320.png"></p>
+<h2 id="题目二：路灯巡回检测器"><a href="#题目二：路灯巡回检测器" class="headerlink" title="题目二：路灯巡回检测器"></a>题目二：路灯巡回检测器</h2><h3 id="设计任务及要求-1"><a href="#设计任务及要求-1" class="headerlink" title="设计任务及要求"></a>设计任务及要求</h3><ol>
+<li>任务<br>用 Verilog 语言设计 8 个路灯巡回检测电路。</li>
+<li>要求<ol>
+<li>巡回检测 8 个路灯，并用 8 个 LED 灯显示好坏。路灯正常时对应的 LED 灯熄灭，路灯故障时对应的 LED 灯点亮；</li>
+<li>能够迅速、准确地判出哪一个路灯坏，并用一个七段数码管显示出故障 灯的总数；</li>
+<li>有启动停止开关。</li>
+<li>自行绑定开发板的管脚，并下载到开发板上观察实际效果。</li>
+</ol>
+</li>
+</ol>
+<h3 id="实验条件-1"><a href="#实验条件-1" class="headerlink" title="实验条件"></a>实验条件</h3><ol>
+<li>Verilog编程和EDA设计工具：Altera Quartus Ⅱ 11.0</li>
+<li>FPGA开发板：Altera DE2-115</li>
+</ol>
+<h3 id="设计过程-1"><a href="#设计过程-1" class="headerlink" title="设计过程"></a>设计过程</h3><h4 id="设计原理和思路"><a href="#设计原理和思路" class="headerlink" title="设计原理和思路"></a>设计原理和思路</h4><p>使用一个开关作为使能端，控制整个检测器的启动与停止。<br>当使能端关闭时，每个路灯无论其是否为故障状态，都不点亮对应的LED灯。同时，七段数码管也不点亮。<br>当使能端开启时，设定一个<code>cnt</code>作为计数器，使用<code>always</code>语句检测每一个路灯是否故障，如果该路灯故障，点亮对应的LED灯，并使<code>cnt</code>计数器（每次循环前，<code>cnt</code>置零）加<code>1</code>；如果该路灯不故障，用七段数码管<code>hex</code>显示<code>cnt</code>对应的数字。</p>
+<h4 id="Verilog代码"><a href="#Verilog代码" class="headerlink" title="Verilog代码"></a>Verilog代码</h4><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> street_lamp_detector(w, hex, leds);</span><br><span class="line">    <span class="keyword">input</span> [<span class="number">8</span>:<span class="number">0</span>] w;</span><br><span class="line">    <span class="keyword">reg</span> [<span class="number">3</span>:<span class="number">0</span>] cnt;</span><br><span class="line">    <span class="keyword">integer</span> k;</span><br><span class="line">    <span class="keyword">output</span> <span class="keyword">reg</span>[<span class="number">0</span>:<span class="number">7</span>] leds;</span><br><span class="line">    <span class="keyword">output</span> <span class="keyword">reg</span>[<span class="number">0</span>:<span class="number">6</span>] hex;</span><br><span class="line">    <span class="keyword">always</span> @(w, cnt)</span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">        cnt=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(w[<span class="number">8</span>] == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">begin</span></span><br><span class="line">                <span class="keyword">for</span>(k = <span class="number">0</span>; k &lt; <span class="number">8</span>; k = k + <span class="number">1</span>)</span><br><span class="line">                    <span class="keyword">if</span>(w[k] == <span class="number">1</span>)</span><br><span class="line">                        <span class="keyword">begin</span></span><br><span class="line">                            leds[k] = <span class="number">1</span>;</span><br><span class="line">                            cnt = cnt + <span class="number">1</span>;</span><br><span class="line">                        <span class="keyword">end</span></span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                        leds[k] = <span class="number">0</span>;</span><br><span class="line">                        <span class="keyword">case</span> (cnt)</span><br><span class="line">                            <span class="number">0</span>: hex = <span class="number">7&#x27;b0000001</span>;</span><br><span class="line">                            <span class="number">1</span>: hex = <span class="number">7&#x27;b1001111</span>;</span><br><span class="line">                            <span class="number">2</span>: hex = <span class="number">7&#x27;b0010010</span>;</span><br><span class="line">                            <span class="number">3</span>: hex = <span class="number">7&#x27;b0000110</span>;</span><br><span class="line">                            <span class="number">4</span>: hex = <span class="number">7&#x27;b1001100</span>;</span><br><span class="line">                            <span class="number">5</span>: hex = <span class="number">7&#x27;b0100100</span>;</span><br><span class="line">                            <span class="number">6</span>: hex = <span class="number">7&#x27;b0100000</span>;</span><br><span class="line">                            <span class="number">7</span>: hex = <span class="number">7&#x27;b0001111</span>;</span><br><span class="line">                            <span class="number">8</span>: hex = <span class="number">7&#x27;b0000000</span>;</span><br><span class="line">                            <span class="keyword">default</span>: hex = <span class="number">7&#x27;b1111111</span>;</span><br><span class="line">                        <span class="keyword">endcase</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">begin</span></span><br><span class="line">                hex = <span class="number">7&#x27;b1111111</span>;</span><br><span class="line">                leds[<span class="number">0</span>:<span class="number">7</span>] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="实验测试-1"><a href="#实验测试-1" class="headerlink" title="实验测试"></a>实验测试</h3><h4 id="开发板引脚分配"><a href="#开发板引脚分配" class="headerlink" title="开发板引脚分配"></a>开发板引脚分配</h4><p>引脚绑定设置如下：<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/20201229220253874.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hzaW5nWWFuZw==,size_16,color_FFFFFF,t_70"></p>
+<h4 id="联机调试"><a href="#联机调试" class="headerlink" title="联机调试"></a>联机调试</h4><p>① 使能端Enable未启动（SW8为0）<br>此时，所有器件不工作：<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/20201229220425113.png"><br>② 使能端Enable启动（SW8为1）<br>如下面两图所示，7端数码管HEX0可以根据正确显示：SW0-SW7的对应故障个数：<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/20201229220546662.png"><br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/20201229220602917.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hzaW5nWWFuZw==,size_16,color_FFFFFF,t_70"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过本次课程设计，掌握了有关同步时序电路的知识，了解了同步时序电路的基本设计步骤，并同通过这些知识设计出了基于时序电路的计数器，完成了数字电子钟的仿真设计。<br>通过本次课程设计，掌握了Verilog语言的基本特征，学习了<code>always</code>、<code>if</code>、<code>case</code>等语句。结合Altera ED2-115开发版，通过Verilog语言进行编程，最终实现了一个路灯巡回检测器。</p>
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div></section><section id="share"><div class="header"><span>分享文章</span></div><div class="body"><div class="link"><input class="copy-area" readonly="true" id="copy-link" value="https://codexin.cn/post/course-design-of-digital-logic/" /></div><div class="social-wrap dis-select"><a class="social share-item wechat" onclick="util.toggle(&quot;qrcode-wechat&quot)"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/b32ef3da1162a.svg"/></a><a class="social share-item weibo" target="_blank" rel="external nofollow noopener noreferrer" href="https://service.weibo.com/share/share.php?url=https://codexin.cn/post/course-design-of-digital-logic/&title=《数字逻辑》课程设计 - 小芯的博客&pics=https://cdn.jsdelivr.net/gh/diandengjun/cdn@master/post/2020/12/2/FPGA.png&summary=题目一：数字电子钟设计设计任务及要求
+任务用计数器设计一个电子钟，显示时、分、秒。
+要求（1） 小时为 00-23 二十四进制计数器，分、秒为 00-59 六十进制计数器；（2） 用八段数码管进行显示时、分、秒。（3） 用 Logis..."><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/80c07e4dbb303.svg"/></a><a class="social share-item email" href="mailto:?subject=《数字逻辑》课程设计 - 小芯的博客&amp;body=https://codexin.cn/post/course-design-of-digital-logic/"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/a1b00e20f425d.svg"/></a><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;复制成功&quot;)"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/8411ed322ced6.svg"/></a></div><div class="qrcode" id="qrcode-wechat" style="visibility:hidden;height:0"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=https://codexin.cn/post/course-design-of-digital-logic/index.html"/></div></div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/post/course-design-of-database/">《数据库原理及应用》课程设计</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/post/course-design-of-data-structure/">《数据结构》课程设计</a></div></section></div>
+
+
+<div class="related-wrap reveal" id="related-posts">
+    <section class='header'>
+      <div class='title cap theme'>您可能感兴趣的文章</div>
+    </section>
+    <section class='body'>
+    <div class="related-posts"><a class="item" href="/post/course-design-of-data-structure/" title="《数据结构》课程设计"><span class="title">《数据结构》课程设计</span><span class="excerpt">课程设计选题：仓库管理系统</span></a></div></section></div>
+
+
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      快来参与讨论吧
+    </section>
+    <section class='body cmt-body waline'>
+      
+
+<div id="waline_container" class="waline_thread"><svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+
+    </section>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/categories/">分类</a><a href="/tags/">标签</a><a href="/archives/">归档</a></div><div class="sitemap-group"><span class="fs14">项目</span><a href="/wiki/">开源库</a></div><div class="sitemap-group"><span class="fs14">社交</span><a href="/friends/">友链</a><a href="/about/#comments">留言板</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/about/">关于本站</a><a href="/privacy/">隐私政策</a><a href="/timeline/">博主动态</a><a target="_blank" rel="noopener" href="https://github.com/icodexin">GitHub</a></div></div><div class="text"><p>本站由 <a target="_blank" rel="noopener" href="https://github.com/icodexin">@爱编程的小芯</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。<br>本站总访问量<span id="busuanzi_value_site_pv"></span>次，访客数<span id="busuanzi_value_site_uv"></span>人次</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function load_comment(){
+    if(!document.getElementById("waline_container"))return;
+    stellar.loadCSS('https://unpkg.com/@waline/client@2.14.1/dist/waline.css');
+    stellar.loadScript('https://unpkg.com/@waline/client@2.14.1/dist/waline.js', {defer:true}).then(function () {
+      const el = document.getElementById("waline_container");
+      var path = el.getAttribute('comment_id');
+      if (!path) {
+        path = decodeURI(window.location.pathname);
+      }
+      Waline.init(Object.assign({"js":"https://unpkg.com/@waline/client@2.14.1/dist/waline.js","css":"https://unpkg.com/@waline/client@2.14.1/dist/waline.css","serverURL":"https://comment.codexin.cn","commentCount":true,"pageview":false,"emoji":["https://unpkg.com/@waline/emojis@1.1.0/weibo","https://unpkg.com/@waline/emojis@1.1.0/alus","https://unpkg.com/@waline/emojis@1.1.0/bilibili","https://unpkg.com/@waline/emojis@1.1.0/qq","https://unpkg.com/@waline/emojis@1.1.0/tieba","https://unpkg.com/@waline/emojis@1.1.0/tw-emoji","https://unpkg.com/@waline/emojis@1.1.0/bmoji"]}, {
+        el: '#waline_container',
+        path: path,
+      }));
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+    load_comment();
+  });
+
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

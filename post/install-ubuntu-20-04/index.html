@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>安装Ubuntu 20.04实战教程 - 小芯的博客</title>
+
+  
+    <meta name="description" content="本文仅适用于UEFI+GPT类型的PC，有关这方面的知识请自行了解。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装Ubuntu 20.04实战教程">
+<meta property="og:url" content="https://codexin.cn/post/install-ubuntu-20-04/">
+<meta property="og:site_name" content="小芯的博客">
+<meta property="og:description" content="本文仅适用于UEFI+GPT类型的PC，有关这方面的知识请自行了解。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/01.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/03.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/02.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/04.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/05.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/06.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/07.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/08.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/09.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/10.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/11.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/12.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/13.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/14.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/15.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/16.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/17.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/18.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/19.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/20.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/21.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/22.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/23.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/%E5%9C%A8Win10-PC%E4%B8%8A%E5%AE%89%E8%A3%85Ubuntu-20-04-%E7%B3%BB%E7%BB%9F/24.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/25.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/%E5%9C%A8Win10-PC%E4%B8%8A%E5%AE%89%E8%A3%85Ubuntu-20-04-%E7%B3%BB%E7%BB%9F/mermaid.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/26.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/%E5%9C%A8Win10-PC%E4%B8%8A%E5%AE%89%E8%A3%85Ubuntu-20-04-%E7%B3%BB%E7%BB%9F/27.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/28.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/%E5%9C%A8Win10-PC%E4%B8%8A%E5%AE%89%E8%A3%85Ubuntu-20-04-%E7%B3%BB%E7%BB%9F/29.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/%E5%9C%A8Win10-PC%E4%B8%8A%E5%AE%89%E8%A3%85Ubuntu-20-04-%E7%B3%BB%E7%BB%9F/30.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/%E5%9C%A8Win10-PC%E4%B8%8A%E5%AE%89%E8%A3%85Ubuntu-20-04-%E7%B3%BB%E7%BB%9F/31.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/%E5%9C%A8Win10-PC%E4%B8%8A%E5%AE%89%E8%A3%85Ubuntu-20-04-%E7%B3%BB%E7%BB%9F/32.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/33.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/34.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/35.jpg">
+<meta property="article:published_time" content="2020-06-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-01-01T13:18:24.949Z">
+<meta property="article:author" content="爱编程的小芯">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="操作系统">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/01.png">
+  
+  
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/images/favicon-48x48.ico">
+  
+
+  
+
+  
+
+
+  
+    
+      <link rel="icon" type="image/x-png" href="/images/favicon-128x128.png" sizes="128x128">
+    
+      <link rel="apple-touch-icon" type="image/x-png" href="/images/favicon-180x180.png">
+    
+      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">小芯的博客</div><div class="sub normal cap">一个热爱编码的计算机大学生</div><div class="sub hover cap" style="opacity:0"> codexin.cn</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">文章</a><a class="nav-item" href="/wiki/">项目</a><a class="nav-item" href="/about/">关于</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">安装Ubuntu 20.04实战教程</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8-Linux-%E7%B3%BB%E7%BB%9F%EF%BC%9F"><span class="toc-text">为什么需要使用 Linux 系统？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9Ubuntu%EF%BC%9F"><span class="toc-text">为什么选择Ubuntu？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%89%8D%E5%87%86%E5%A4%87"><span class="toc-text">安装前准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STEP1-%E5%88%B6%E4%BD%9CU%E7%9B%98%E5%90%AF%E5%8A%A8%E5%AE%89%E8%A3%85%E7%9B%98"><span class="toc-text">STEP1 制作U盘启动安装盘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STEP2-%E5%88%86%E9%85%8D%E7%94%A8%E4%BA%8EUbuntu%E7%9A%84%E7%A9%BA%E9%97%B4%E5%A4%A7%E5%B0%8F"><span class="toc-text">STEP2 分配用于Ubuntu的空间大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STEP3-%E5%AE%89%E8%A3%85%E5%89%8D%E7%9A%84BIOS%E8%AE%BE%E7%BD%AE"><span class="toc-text">STEP3 安装前的BIOS设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STEP4-%E5%AE%89%E8%A3%85Ubuntu-20-02-LTS"><span class="toc-text">STEP4 安装Ubuntu 20.02 LTS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%8F%92%E5%85%A5U%E7%9B%98%EF%BC%8C%E8%BF%9B%E5%85%A5U%E7%9B%98%E5%90%AF%E5%8A%A8%E7%95%8C%E9%9D%A2"><span class="toc-text">1. 插入U盘，进入U盘启动界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85"><span class="toc-text">2. 开始安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%B8%BAUbuntu%E8%BF%9B%E8%A1%8C%E5%90%88%E7%90%86%E7%B3%BB%E7%BB%9F%E5%88%86%E5%8C%BA"><span class="toc-text">3. 为Ubuntu进行合理系统分区</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-EFI%E7%B3%BB%E7%BB%9F%E5%88%86%E5%8C%BA"><span class="toc-text">1. EFI系统分区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Swap%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA"><span class="toc-text">2. Swap交换分区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%A0%B9%E7%9B%AE%E5%BD%95-x2F"><span class="toc-text">3. 根目录 (&#x2F;)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%AE%B6%E7%9B%AE%E5%BD%95-x2F-home"><span class="toc-text">4. 家目录 (&#x2F;home)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%89%A7%E8%A1%8C%E5%AE%89%E8%A3%85"><span class="toc-text">4. 执行安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STEP5-%E8%BF%9B%E5%85%A5Ubuntu%E7%B3%BB%E7%BB%9F"><span class="toc-text">STEP5 进入Ubuntu系统</span></a></li></ol></div></div></widget>
+
+
+</div>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/icodexin" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/08a41b181ce68.svg"/></a><a class="social" href="https://music.163.com/#/user/home?id=315096386" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/3845874.svg"/></a><a class="social" href="/about/#comments" rel="noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/942ebbf1a4b91.svg"/></a></div></footer>
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">解决方案</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/Linux/">Linux</a></div><div id="post-meta">发布于&nbsp;<time datetime="2020-06-26T16:00:00.000Z">2020-06-27</time></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>安装Ubuntu 20.04实战教程</span></h1>
+<div class="tag-plugin note" ><div class="body"><p>本文仅适用于UEFI+GPT类型的PC，有关这方面的知识请自行了解。</p></div></div>
+
+<span id="more"></span>
+
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><h3 id="为什么需要使用-Linux-系统？"><a href="#为什么需要使用-Linux-系统？" class="headerlink" title="为什么需要使用 Linux 系统？"></a>为什么需要使用 Linux 系统？</h3><p>既已看到此文，我相信你一定有需求来使用Linux系统了。</p>
+<div class="tag-plugin note" ><div class="body"><p>Linux是服务器首选操作系统</p></div></div>
+
+<div class="tag-plugin folders" ><details class="folder" index="0"><summary><span>稳定、高效</span></summary><div class="body"><p>Linux系统相对Windows系统稳定并且高效，服务器要求长时间运行不关机，显然Windows系统不适和使用在服务器上。<br>并且Linux系统更改大多数配置都无需重启服务器即可生效，这也确保了 Linux 服务器最短的停机时间。</p></div></details><details class="folder" index="1"><summary><span>开源</span></summary><div class="body"><p>Linux系统是开源的，你可以对系统进行自定义，以满足使用要求，这是Windows无法比拟的。</p></div></details><details class="folder" index="2"><summary><span>性能良好</span></summary><div class="body"><p>服务器端Linux可自由配置GUI界面或者仅使用<strong>终端</strong>进行管理，保证其对硬件配置需求低。</p></div></details></div>
+
+<div class="tag-plugin note" ><div class="body"><p>而作为程序员的你，如果要做在服务器上进行开发，就必须要学会使用Linux！<br>我认为，如果仅做开发，Linux系统实在太自由、舒服了！<br>在终端里演绎出自己的世界，一行一行命令即可掌控全局！<br>​也不再有国内生态下Windows满天飞的广告了！</p></div></div>
+
+<h3 id="为什么选择Ubuntu？"><a href="#为什么选择Ubuntu？" class="headerlink" title="为什么选择Ubuntu？"></a>为什么选择Ubuntu？</h3><p>这个嘛，因为Ubuntu对新手太友好了！而且，Ubuntu对桌面系统支持特别好。同时，使用Ubuntu的人也非常多。</p>
+<h2 id="安装前准备"><a href="#安装前准备" class="headerlink" title="安装前准备"></a>安装前准备</h2><div class="tag-plugin timeline"><div class="timenode" index="0"><div class="header"><ol><li>已经安装好Windows10的一台PC</li></ol></div><div class="body fs14"><p>官方推荐配置：</p><div class="tag-plugin checkbox" color="red"><input type="checkbox" checked="true"/><span>2&nbsp;GHz&nbsp;双核处理器或更快的处理器</span></div><div class="tag-plugin checkbox" color="blue"><input type="checkbox" checked="true"/><span>4&nbsp;GB&nbsp;系统内存</span></div><div class="tag-plugin checkbox" color="green"><input type="checkbox" checked="true"/><span>25&nbsp;GB&的可用硬盘空间</span></div><p>本文PC平台：</p><table><thead><tr><th>项目</th><th>配置</th></tr></thead><tbody><tr><td>品牌型号</td><td>Lenovo Xiaoxin Pro-13 IML 2019</td></tr><tr><td>CPU</td><td>Intel Core i7-10710U</td></tr><tr><td>RAM</td><td>16 GB</td></tr><tr><td>SSD</td><td>512GB</td></tr><tr><td>GPU</td><td>NVIDIA Geforce MX250</td></tr><tr><td>已安装Win10版本</td><td>Windows 10 Pro 1909 18363.900</td></tr></tbody></table><p>本文安装教程仅在此平台测试过，其他PC平台请自行参考</p></div></div><div class="timenode" index="1"><div class="header"><ol start="2"><li>Ubuntu 20.04 镜像文件</li></ol></div><div class="body fs14"><p>从<a target="_blank" rel="noopener" href="https://ubuntu.com/download/desktop">Ubuntu官网</a>下载Ubuntu 20.04 LTS 镜像文件。</p><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/01.png" alt="点击 download 按钮下载Ubuntu 20.04 LTS 镜像文件"/></div><div class="image-meta"><span class="image-caption center">点击 download 按钮下载Ubuntu 20.04 LTS 镜像文件</span></div></div><p>点击下载按钮后可能会出现捐助页面，你可以根据个人情况进行捐助。<br>如果你觉得下载速度慢，你可以使用某些下载器（如迅雷、Motrix）进行下载。</p></div></div><div class="timenode" index="2"><div class="header"><ol start="3"><li>一个空间大于4GB的U盘</li></ol></div><div class="body fs14"><p>请在安装前，确保U盘内所有内容都已备份！U盘将用于制作Ubuntu安装盘。<br>另外，推荐使用USB3.0以上的U盘（PC也要有USB3.0端口），安装时间更快。</p></div></div><div class="timenode" index="3"><div class="header"><ol start="4"><li>一款USB启动盘制作软件</li></ol></div><div class="body fs14"><p>常见的工具软件是UltralSO，不过此处我推荐使用<a target="_blank" rel="noopener" href="http://rufus.ie/">Rufus</a>，使用它安装系统更为简洁、明了。<br>并且Ubuntu官网也推荐使用Rufus进行安装。</p><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/03.png" alt="点击 Rufus 3.11 进行下载"/></div><div class="image-meta"><span class="image-caption center">点击 Rufus 3.11 进行下载</span></div></div></div></div><div class="timenode" index="4"><div class="header"><ol start="5"><li>检查电脑BIOS模式</li></ol></div><div class="body fs14"><p>使用<kbd>Win</kbd>+<kbd>R</kbd>打开运行窗口，输入<code>msinfo32</code>后回车，出现以下界面，可查看BIOS模式：</p><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/02.png" alt="BIOS模式" style="width:50%;"/></div><div class="image-meta"><span class="image-caption center">BIOS模式</span></div></div>   <p>可见，本文BIOS模式为UEFI，如果你显示为“传统”字样，那么本教程可能不适用你的电脑。</p><p>BIOS模式有传统的MBR模式和新式UEFI模式，这将对安装双系统的方法产生直接影响。目前来看，大部分电脑都属于新式UEFI模式，不过也存在一些老机子仍然属于传统MBR模式。本教程只介绍新式UEFI模式下的双系统安装方法，如果你的电脑属于传统MBR模式，强烈建议你重装Windows系统来更新BIOS模式到UEFI。</p></div></div></div>
+
+<h2 id="STEP1-制作U盘启动安装盘"><a href="#STEP1-制作U盘启动安装盘" class="headerlink" title="STEP1 制作U盘启动安装盘"></a>STEP1 制作U盘启动安装盘</h2><div class="tag-plugin timeline"><div class="timenode" index="0"><div class="header"><ol><li>打开Rufus软件，选择U盘设备</li></ol></div><div class="body fs14"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/04.png" alt="此时请确保设备下拉框选中的是你的U盘" style="width:50%;"/></div><div class="image-meta"><span class="image-caption center">此时请确保设备下拉框选中的是你的U盘</span></div></div></div></div><div class="timenode" index="1"><div class="header"><ol start="2"><li>加载引导镜像</li></ol></div><div class="body fs14"><p>点击<kbd>选择</kbd>按钮，这将打开一个文件选择窗口，请选择之前下载好的Ubuntu 20.04 LTS 镜像（本教程下载后的镜像名为Ubuntu-20.04-desktop-amd64.iso）</p></div></div><div class="timenode" index="2"><div class="header"><ol start="3"><li>选择分区类型</li></ol></div><div class="body fs14"><p>前文已经提到，本机BIOS采用的是UEFI，所以将分区类型选择为GPT模式。</p><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/05.png" alt="选择分区类型" style="width:50%;"/></div><div class="image-meta"><span class="image-caption center">选择分区类型</span></div></div></div></div><div class="timenode" index="3"><div class="header"><ol start="4"><li>写入镜像</li></ol></div><div class="body fs14"><p><strong>在进行此操作前，请确保U盘文件已备份。</strong></p><p>点击开始按钮，将进行写入操作。<br>同时，可能会提示“检测到ISOHybrid镜像”，请选择默认选项，并点击OK。</p><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/06.png" alt="检测到ISOHybrid镜像" style="width:50%;"/></div><div class="image-meta"><span class="image-caption center">检测到ISOHybrid镜像</span></div></div><p>之后，还会弹出警告窗口，请确保已备份U盘文件，然后点击确定，这将开始操作。</p><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/07.png" style="width:50%;"/></div></div><p>使用USB3.0的U盘，大约在3分钟后完成写入操作。<br>完成后，可以关闭软件。</p></div></div></div>
+
+<h2 id="STEP2-分配用于Ubuntu的空间大小"><a href="#STEP2-分配用于Ubuntu的空间大小" class="headerlink" title="STEP2 分配用于Ubuntu的空间大小"></a>STEP2 分配用于Ubuntu的空间大小</h2><div class="tag-plugin timeline"><div class="timenode" index="0"><div class="header"><ol><li>启动磁盘管理</li></ol></div><div class="body fs14"><p>右键左下角Windows图标，选择“磁盘管理”选项。</p><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/08.png" style="width:50%;"/></div></div></div></div><div class="timenode" index="1"><div class="header"><ol start="2"><li>分配空间</li></ol></div><div class="body fs14"><p>在PC磁盘（<strong>非U盘</strong>）末尾（也就是<strong>最后一个盘</strong>）分配一个合适大小的空间，用于Ubuntu的使用。<br>（如果你的PC是双硬盘，本文可能不适用）</p><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/09.png"/></div></div>右键最后一个盘(此处为E盘)，点击压缩卷，以压缩出Ubuntu的空间。<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/10.png" style="width:50%;"/></div></div>输入压缩空间量，<b>注意单位是MB</b>，此处我选择了80GB(即80*1024=81920MB)，然后点击压缩。    <div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/11.png" style="width:50%;"/></div></div>最终，盘末压缩出了80GB未分配的空间，这将用于Ubuntu。<p><u>现在，准备工作已经完成了一大半，请关闭计算机，进入下一步骤</u></p></div></div></div>
+
+<h2 id="STEP3-安装前的BIOS设置"><a href="#STEP3-安装前的BIOS设置" class="headerlink" title="STEP3 安装前的BIOS设置"></a>STEP3 安装前的BIOS设置</h2><p>进入BIOS设置界面，具体品牌有具体的方法，请自行查找。(本机为开机按F2键)</p>
+<p>以下BIOS界面所示为联想小新PRO 13 英特尔版。</p>
+<ol>
+<li>设置UEFI固件选项<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/12.png" alt="开机按F2键，进入BIOS设置界面，点击<b>Boot Setup</b>" style="width:50%;"/></div><div class="image-meta"><span class="image-caption center">开机按F2键，进入BIOS设置界面，点击<b>Boot Setup</b></span></div></div></li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/13.jpg" alt="切换到<b>Security</b>选项卡，将<b>Secure Boot</b>值改为<b>Disabled</b>" style="width:80%;"/></div><div class="image-meta"><span class="image-caption center">切换到<b>Security</b>选项卡，将<b>Secure Boot</b>值改为<b>Disabled</b></span></div></div>
+<div class="tag-plugin note" ><div class="body"><p>此步骤旨在关闭安全启动。有关安装Linux系统和关闭安全启动的原因请自行了解。</p></div></div>
+
+<ol start="2">
+<li>退出BIOS设置界面，<strong>保存设置</strong>，并关机</li>
+</ol>
+<h2 id="STEP4-安装Ubuntu-20-02-LTS"><a href="#STEP4-安装Ubuntu-20-02-LTS" class="headerlink" title="STEP4 安装Ubuntu 20.02 LTS"></a>STEP4 安装Ubuntu 20.02 LTS</h2><h3 id="1-插入U盘，进入U盘启动界面"><a href="#1-插入U盘，进入U盘启动界面" class="headerlink" title="1. 插入U盘，进入U盘启动界面"></a>1. 插入U盘，进入U盘启动界面</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/14.jpg" alt="开机按F2键，进入启动项选择界面，点击<b>Boot Menu</b>" style="width:50%;"/></div><div class="image-meta"><span class="image-caption center">开机按F2键，进入启动项选择界面，点击<b>Boot Menu</b></span></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/15.jpg" alt="选择U盘启动项，例如这里：Linpus lite" style="width:50%;"/></div><div class="image-meta"><span class="image-caption center">选择U盘启动项，例如这里：Linpus lite</span></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/16.jpg" alt="在左上角，选择Ubuntu项，回车" style="width:50%;"/></div><div class="image-meta"><span class="image-caption center">在左上角，选择Ubuntu项，回车</span></div></div>
+
+<p>等待数秒后，即可开始安装</p>
+<h3 id="2-开始安装"><a href="#2-开始安装" class="headerlink" title="2. 开始安装"></a>2. 开始安装</h3><div class="tag-plugin tabs" align="center"id="tab_1"><div class="nav-tabs"><div class="tab active"><a href="#tab_1-1">欢迎页</a></div><div class="tab"><a href="#tab_1-2">键盘布局</a></div><div class="tab"><a href="#tab_1-3">更新和其他软件</a></div></div><div class="tab-content"><div class="tab-pane active" id="tab_1-1"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/17.jpg" style="width:80%;"/></div></div></div><div class="tab-pane" id="tab_1-2"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/18.jpg" style="width:80%;"/></div></div></div><div class="tab-pane" id="tab_1-3"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/19.jpg" alt="根据需要选择安装" style="width:80%;"/></div><div class="image-meta"><span class="image-caption center">根据需要选择安装</span></div></div></div></div></div>
+
+<h3 id="3-为Ubuntu进行合理系统分区"><a href="#3-为Ubuntu进行合理系统分区" class="headerlink" title="3. 为Ubuntu进行合理系统分区"></a>3. 为Ubuntu进行合理系统分区</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/20.jpg" alt="<b>安装类型务请必选择其他选项</b>，否则Windows系统可能将不复存在" style="width:80%;"/></div><div class="image-meta"><span class="image-caption center"><b>安装类型务请必选择其他选项</b>，否则Windows系统可能将不复存在</span></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/21.jpg" style="width:80%;"/></div></div>
+
+<div class="tag-plugin note" color="warning"><div class="body"><p><strong>接下来，将进行分区操作，请谨慎小心，一旦出错，后果可能出乎意料！</strong></p></div></div>
+
+<p>有关Linux系统的目录结构与Windows的区别，请自行了解相关知识。</p>
+<p>为Ubuntu分区有很多种方式，这里只介绍我操作的。</p>
+<p>我的分区方案是：</p>
+<table>
+<thead>
+<tr>
+<th>挂载点</th>
+<th>分区用于</th>
+<th>分区类型</th>
+<th>分区位置</th>
+<th>大小</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>EFI系统分区</td>
+<td>逻辑分区</td>
+<td>空间起始位置</td>
+<td>128MB - 512MB，推荐直接512MB</td>
+</tr>
+<tr>
+<td></td>
+<td>Swap交换空间</td>
+<td>逻辑分区</td>
+<td>空间起始位置</td>
+<td>视具体情况而定，见下文</td>
+</tr>
+<tr>
+<td>&#x2F;</td>
+<td>Ext4日志文件系统</td>
+<td>主分区</td>
+<td>空间起始位置</td>
+<td>可分配空间的30%</td>
+</tr>
+<tr>
+<td>&#x2F;home</td>
+<td>Ext4日志文件系统</td>
+<td>逻辑分区</td>
+<td>空间起始位置</td>
+<td>剩余未分配空间</td>
+</tr>
+</tbody></table>
+<hr>
+<p>下面开始具体操作(每次操作都对上图所示<strong>橙色的空闲未分配区域</strong>）：</p>
+<u>请一定按照顺序进行。</u>
+
+<h4 id="1-EFI系统分区"><a href="#1-EFI系统分区" class="headerlink" title="1. EFI系统分区"></a>1. EFI系统分区</h4><div class="tag-plugin note" ><div class="body"><p>EFI，全称“Extensible Firmware Interface”，即可扩展固件接口，用于操作系统启动前，完成硬件初始化，并引导进入操作系统。现在，绝大多数个人PC都使用EFI升级版本——UEFI。<br>点击左下角“+”号，弹出创建分区界面</p></div></div>
+
+<div class="tag-plugin grid" ><div class="cell" index="0"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/22.jpg"/></div></div></div><div class="cell" index="1"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/23.jpg"/></div></div></div></div>
+
+<p>将大小改为<strong>512MB</strong>(推荐值)，分区类型改为<strong>逻辑分区</strong>，分区位置设置为<strong>空间起始位置</strong>，用于选择<strong>EFI系统分区</strong>。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/%E5%9C%A8Win10-PC%E4%B8%8A%E5%AE%89%E8%A3%85Ubuntu-20-04-%E7%B3%BB%E7%BB%9F/24.jpg"></p>
+<p>点击OK后，<strong>请记下此时创建好的efi分区所在的设备号</strong>，如本次安装在&#x2F;dev&#x2F;nvme0n1p7 (不是Windows所在的efi分区，请看清楚)</p>
+<h4 id="2-Swap交换分区"><a href="#2-Swap交换分区" class="headerlink" title="2. Swap交换分区"></a>2. Swap交换分区</h4><div class="tag-plugin note" ><div class="body"><p>Swap分区在系统的物理内存不够用的时候，把硬盘内存中的一部分空间释放出来，以供当前运行的程序使用。那些被释放的空间可能来自一些很长时间没有什么操作的程序，这些被释放的空间被临时保存到Swap分区中，等到那些程序要运行时，再从Swap分区中恢复保存的数据到内存中。通俗来讲，Swap空间相当于Windows中的虚拟内存。</p></div></div>
+
+<p>分配Swap分区大小视情况而定：</p>
+<table>
+<thead>
+<tr>
+<th align="center">RAM 物理内存</th>
+<th align="center">推荐 Swap 分区大小</th>
+<th align="center">需要休眠功能下建议的交换空间大小</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">≤ 2GB</td>
+<td align="center">2倍于RAM大小</td>
+<td align="center">3倍于RAM大小</td>
+</tr>
+<tr>
+<td align="center">&gt; 2GB</td>
+<td align="center">和RAM相同</td>
+<td align="center">2倍于RAM大小</td>
+</tr>
+<tr>
+<td align="center">&gt; 8GB - 64GB</td>
+<td align="center">至少4GB</td>
+<td align="center">1.5倍于RAM大小</td>
+</tr>
+<tr>
+<td align="center">&gt; 64GB</td>
+<td align="center">至少4GB</td>
+<td align="center">不建议休眠</td>
+</tr>
+</tbody></table>
+<p>对本机(机带RAM 16GB)以及分配给Ubuntu的大小(80GB)，综合考虑，Swap分区设置为8GB(8192MB)。</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/25.jpg" style="width:50%;"/></div></div>
+
+<h4 id="3-根目录-x2F"><a href="#3-根目录-x2F" class="headerlink" title="3. 根目录 (&#x2F;)"></a>3. 根目录 (&#x2F;)</h4><p>Linux的文件系统是采用级层式的树状目录结构，在此结构中最上层是根目录“&#x2F;”，然后在此目录下再创建其它的目录。</p>
+<p>在Linux世界里，一切接文件，下图可清晰理解:<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/%E5%9C%A8Win10-PC%E4%B8%8A%E5%AE%89%E8%A3%85Ubuntu-20-04-%E7%B3%BB%E7%BB%9F/mermaid.png"><br>根目录设置为可分配空间(此处为80GB)的30%，即大约25GB(25600MB)。</p>
+<h4 id="4-家目录-x2F-home"><a href="#4-家目录-x2F-home" class="headerlink" title="4. 家目录 (&#x2F;home)"></a>4. 家目录 (&#x2F;home)</h4><div class="tag-plugin note" ><div class="body"><p>存放所有用户文件的根目录，是用户主目录的基点，比如用户user的主目录就是&#x2F;home&#x2F;user，可以用<code>~</code>表示</p></div></div>
+
+<p>应此分区存放内容较多，应将其设置尽可能大，而之前已经分配完该分配的空间了，这里只需将剩余的空间全部给 &#x2F;home 分区即可，这就是为什么 &#x2F;home 分区放在最后设置。</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/26.jpg" style="width:50%;"/></div></div>
+
+<h3 id="4-执行安装"><a href="#4-执行安装" class="headerlink" title="4. 执行安装"></a>4. 执行安装</h3><u>注意：分区结束后请勿立即开始安装！</u>
+
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/%E5%9C%A8Win10-PC%E4%B8%8A%E5%AE%89%E8%A3%85Ubuntu-20-04-%E7%B3%BB%E7%BB%9F/27.png"></p>
+<p><strong>请确保安装启动引导器的设备为设置EFI系统分区时的设备号！</strong>(&#x2F;dev&#x2F;nvme0n1p7)</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/28.jpg" style="width:50%;"/></div></div>
+
+<p>现在，一切就绪，点击<kbd>现在安装(I)</kbd>，如遇提示，请点击<kbd>继续</kbd>后，执行安装</p>
+<div class="tag-plugin gallery swiper" id="swiper-api" width="max" effect="coverflow"><div class="swiper-wrapper"><div class="swiper-slide"><img no-lazy src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/%E5%9C%A8Win10-PC%E4%B8%8A%E5%AE%89%E8%A3%85Ubuntu-20-04-%E7%B3%BB%E7%BB%9F/29.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></div><div class="swiper-slide"><img no-lazy src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/%E5%9C%A8Win10-PC%E4%B8%8A%E5%AE%89%E8%A3%85Ubuntu-20-04-%E7%B3%BB%E7%BB%9F/30.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></div><div class="swiper-slide"><img no-lazy src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/%E5%9C%A8Win10-PC%E4%B8%8A%E5%AE%89%E8%A3%85Ubuntu-20-04-%E7%B3%BB%E7%BB%9F/31.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></div><div class="swiper-slide"><img no-lazy src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/%E5%9C%A8Win10-PC%E4%B8%8A%E5%AE%89%E8%A3%85Ubuntu-20-04-%E7%B3%BB%E7%BB%9F/32.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></div></div><div class="swiper-pagination"></div><div class="swiper-button-prev blur"></div><div class="swiper-button-next blur"></div></div>
+
+<p>执行系列操作后，重新启动PC</p>
+<h2 id="STEP5-进入Ubuntu系统"><a href="#STEP5-进入Ubuntu系统" class="headerlink" title="STEP5 进入Ubuntu系统"></a>STEP5 进入Ubuntu系统</h2><div class="tag-plugin timeline"><div class="timenode" index="0"><div class="header"><p>重启后，提示移除安装介质，请将U盘拔出后，键入回车</p></div><div class="body fs14"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/33.jpg" style="width:50%;"/></div></div></div></div><div class="timenode" index="1"><div class="header"><p>若没有手动选择启动项，几秒钟后将自动进入Ubuntu</p></div><div class="body fs14"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/34.jpg" style="width:50%;"/></div></div></div></div><div class="timenode" index="2"><div class="header"><p>现在，你可以开始体验Ubuntu 20.04了！</p></div><div class="body fs14"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/DianDengJun/cdn/post/2020/06/27/在Win10-PC上安装Ubuntu-20-04-系统/35.jpg" style="width:50%;"/></div></div></div></div></div>
+
+<div class="tag-plugin note" color="red"><div class="body"><p>感谢你阅读到此，希望本文对你有所帮助，如有问题，请在主页里用<a href="mailto:yangxin@codexin.cn">邮件</a>方式联系我！</p></div></div>
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div></section><section id="share"><div class="header"><span>分享文章</span></div><div class="body"><div class="link"><input class="copy-area" readonly="true" id="copy-link" value="https://codexin.cn/post/install-ubuntu-20-04/" /></div><div class="social-wrap dis-select"><a class="social share-item wechat" onclick="util.toggle(&quot;qrcode-wechat&quot)"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/b32ef3da1162a.svg"/></a><a class="social share-item weibo" target="_blank" rel="external nofollow noopener noreferrer" href="https://service.weibo.com/share/share.php?url=https://codexin.cn/post/install-ubuntu-20-04/&title=安装Ubuntu 20.04实战教程 - 小芯的博客&pics=https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1440/https://Ubuntu.com/wp-content/uploads/f792/focal-default-background.png&summary=本文仅适用于UEFI+GPT类型的PC，有关这方面的知识请自行了解。"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/80c07e4dbb303.svg"/></a><a class="social share-item email" href="mailto:?subject=安装Ubuntu 20.04实战教程 - 小芯的博客&amp;body=https://codexin.cn/post/install-ubuntu-20-04/"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/a1b00e20f425d.svg"/></a><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;复制成功&quot;)"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/8411ed322ced6.svg"/></a></div><div class="qrcode" id="qrcode-wechat" style="visibility:hidden;height:0"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=https://codexin.cn/post/install-ubuntu-20-04/index.html"/></div></div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/post/2020computer-skill-competition/">2020全国大学生计算机技能应用大赛决赛C语言编程题摘录</a></div><div class="item" id="next"></div></section></div>
+
+
+<div class="related-wrap reveal" id="related-posts"></div>
+
+
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      快来参与讨论吧
+    </section>
+    <section class='body cmt-body waline'>
+      
+
+<div id="waline_container" class="waline_thread"><svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+
+    </section>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/categories/">分类</a><a href="/tags/">标签</a><a href="/archives/">归档</a></div><div class="sitemap-group"><span class="fs14">项目</span><a href="/wiki/">开源库</a></div><div class="sitemap-group"><span class="fs14">社交</span><a href="/friends/">友链</a><a href="/about/#comments">留言板</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/about/">关于本站</a><a href="/privacy/">隐私政策</a><a href="/timeline/">博主动态</a><a target="_blank" rel="noopener" href="https://github.com/icodexin">GitHub</a></div></div><div class="text"><p>本站由 <a target="_blank" rel="noopener" href="https://github.com/icodexin">@爱编程的小芯</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。<br>本站总访问量<span id="busuanzi_value_site_pv"></span>次，访客数<span id="busuanzi_value_site_uv"></span>人次</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function load_comment(){
+    if(!document.getElementById("waline_container"))return;
+    stellar.loadCSS('https://unpkg.com/@waline/client@2.14.1/dist/waline.css');
+    stellar.loadScript('https://unpkg.com/@waline/client@2.14.1/dist/waline.js', {defer:true}).then(function () {
+      const el = document.getElementById("waline_container");
+      var path = el.getAttribute('comment_id');
+      if (!path) {
+        path = decodeURI(window.location.pathname);
+      }
+      Waline.init(Object.assign({"js":"https://unpkg.com/@waline/client@2.14.1/dist/waline.js","css":"https://unpkg.com/@waline/client@2.14.1/dist/waline.css","serverURL":"https://comment.codexin.cn","commentCount":true,"pageview":false,"emoji":["https://unpkg.com/@waline/emojis@1.1.0/weibo","https://unpkg.com/@waline/emojis@1.1.0/alus","https://unpkg.com/@waline/emojis@1.1.0/bilibili","https://unpkg.com/@waline/emojis@1.1.0/qq","https://unpkg.com/@waline/emojis@1.1.0/tieba","https://unpkg.com/@waline/emojis@1.1.0/tw-emoji","https://unpkg.com/@waline/emojis@1.1.0/bmoji"]}, {
+        el: '#waline_container',
+        path: path,
+      }));
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+    load_comment();
+  });
+
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
